@@ -58,7 +58,6 @@ function App() {
         <ModalContent
           borderTopRadius={"lg"}
           position={"absolute"}
-          maxWidth={"500px"}
           bottom={0}
           margin={0}
           minHeight={"auto !important"}

@@ -20,13 +20,13 @@ function App() {
 
   return (
     <>
-      <VStack>
+      <VStack spacing={8} align={"center"} justify={"center"} p={8}>
         <Text fontSize={"20px"} fontWeight={"bold"}>
           QR Code Scanner
         </Text>
         <Box
-          width={"500px"}
-          height={"500px"}
+          width={"100%"}
+          maxWidth={"500px"}
           border={"4px solid"}
           borderRadius={"lg"}
           borderColor={!!url ? "green.500" : "gray.300"}
@@ -43,7 +43,7 @@ function App() {
                 console.error(error);
               }
             }}
-            constraints={{ facingMode: "environment" }}
+            constraints={{ facingMode: "environment", aspectRatio: 1 }}
           />
         </Box>
       </VStack>

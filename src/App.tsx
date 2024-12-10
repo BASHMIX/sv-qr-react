@@ -47,21 +47,9 @@ function App() {
           />
         </Box>
       </VStack>
-      <Modal
-        isCentered={true}
-        size={"full"}
-        motionPreset={"slideInBottom"}
-        isOpen={!!url}
-        onClose={() => setUrl(null)}
-      >
+      <Modal isCentered={true} size={"md"} isOpen={!!url} onClose={() => setUrl(null)}>
         <ModalOverlay bg="blackAlpha.300" backdropFilter="blur(10px)" />
-        <ModalContent
-          borderTopRadius={"lg"}
-          position={"absolute"}
-          bottom={0}
-          margin={0}
-          minHeight={"auto !important"}
-        >
+        <ModalContent borderTopRadius={"lg"}>
           <ModalHeader>Valet Jo</ModalHeader>
           <ModalCloseButton />
           <ModalBody>

@@ -10,7 +10,11 @@ function App() {
 
   useEffect(() => {
     if (data && isValidUrl(data)) {
-      window.open(data, "sv-qr-react");
+      window.open(
+        data,
+        "sv-qr-react",
+        "width=400,height=600,toolbar=no,menubar=no,scrollbars=no,resizable=no",
+      );
     }
   }, [data]);
 

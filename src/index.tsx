@@ -1,3 +1,5 @@
+import { ThemeProvider } from "@chakra-ui/react";
+import { baseTheme } from "@chakra-ui/theme";
 import React from "react";
 import ReactDOM from "react-dom/client";
 
@@ -8,7 +10,9 @@ import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={baseTheme}>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>,
 );
 

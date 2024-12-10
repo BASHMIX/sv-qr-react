@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "PORT=3001 react-scripts start",
+    "start": "set PORT=3001 && react-scripts start",
     "build": "react-scripts build",
     "lint": "eslint . --ext .ts,.tsx && prettier --check 'src/**/*.ts' 'src/**/*.tsx' 'scripts/**/*.ts'"
   },

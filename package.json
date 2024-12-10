@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "set PORT=3001 && react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "lint": "eslint . --ext .ts,.tsx && prettier --check 'src/**/*.ts' 'src/**/*.tsx' 'scripts/**/*.ts'"
   },
@@ -24,6 +24,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.3.0",
+    "react-qr-reader": "^3.0.0-beta-1",
     "react-scripts": "5.0.1",
     "stream-browserify": "^3.0.0",
     "vm-browserify": "^1.1.2",

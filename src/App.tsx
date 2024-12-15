@@ -53,7 +53,7 @@ function App() {
           <ModalHeader>Valet Jo</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            {url && <iframe title={"bashmix"} src={url} width={"100%"} height={"600px"}></iframe>}
+            {url && <iframe title={"bashmix"} src={url} width={"100%"} height={"600px"} allow="*"></iframe>}
           </ModalBody>
         </ModalContent>
       </Modal>

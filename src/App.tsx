@@ -35,34 +35,49 @@ function App() {
 
   return (
     <>
-      <VStack spacing={8} align={"center"} justify={"center"} p={8}>
-        <Text fontSize={"20px"} fontWeight={"bold"}>
-          QR Code Scanner
-        </Text>
-        <Box
-          width={"100%"}
-          maxWidth={"500px"}
-          border={"4px solid"}
-          borderRadius={"lg"}
-          borderColor={!!url ? "green.500" : "gray.300"}
-        >
-          <QrReader
-            onResult={(result, error) => {
-              if (result) {
-                const text = result.getText().trim();
-                if (isValidUrl(text)) {
-                  setCounter(3);
-                  setUrl(text);
+      <div style={{ width: '100%', display: 'flex', justifyContent: 'center', marginTop: 30 }}>
+        <img src={process.env.PUBLIC_URL + '/svlogo.png'} alt="Logo" style={{ display: 'block' }} />
+      </div>
+      <div style={{ position: 'relative', zIndex: 1 }}>
+        <VStack spacing={8} align={"center"} justify={"center"} p={8}>
+          <Text fontSize={"36px"} fontWeight={"bold"} mb={0}>
+            Order Your Car Here!
+          </Text>
+          <Box
+            width={"100%"}
+            maxWidth={"500px"}
+            border={"4px solid"}
+            borderRadius={"lg"}
+            borderColor={!!url ? "green.500" : "gray.300"}
+          >
+            <QrReader
+              onResult={(result, error) => {
+                if (result) {
+                  const text = result.getText().trim();
+                  if (isValidUrl(text)) {
+                    setCounter(3);
+                    setUrl(text);
+                  }
                 }
-              }
-              if (error) {
-                console.error(error);
-              }
-            }}
-            constraints={{ facingMode: "environment", aspectRatio: 1 }}
-          />
-        </Box>
-      </VStack>
+                if (error) {
+                  console.error(error);
+                }
+              }}
+              constraints={{ facingMode: "environment", aspectRatio: 1 }}
+            />
+          </Box>
+        </VStack>
+      </div>
+      <div style={{
+        width: '100%',
+        height: 500,
+        background: '#1b9dd8',
+        position: 'fixed',
+        left: 0,
+        bottom: 0,
+        zIndex: 0
+      }}></div>
+      {/* Footer added below the scanner box, now fixed to bottom */}
       <Modal isCentered={true} size={"md"} isOpen={!!url} onClose={() => setUrl(null)}>
         <ModalOverlay bg="blackAlpha.300" backdropFilter="blur(10px)" />
         <ModalContent borderTopRadius={"lg"}>

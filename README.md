@@ -1,4 +1,4 @@
-# SafeQR2025
+# sv-qr-react
 
 This app is designed to call your car from valet when you scan the QR code on your valet ticket.
 
